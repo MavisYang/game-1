@@ -1,0 +1,1 @@
+var groupIp="https://mpmt.gemii.cc/",wxIp="http://wx.gemii.cc/";function GetQueryString(t){var n=new RegExp("(^|&)"+t+"=([^&]*)(&|$)"),r=window.location.search.substr(1).match(n);return null!=r?r[2]:null}

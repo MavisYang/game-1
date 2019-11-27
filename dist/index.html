@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=640,user-scalable=no,target-densitydpi=device-dpi"><meta name=format-detection content="telephone=no,email=no,address=no"><meta http-equiv=Cache-Control content="no-cache, no-store, must-revalidate"><meta http-equiv=Pragma content=no-cache><meta http-equiv=Expires content=0><title>至慧学堂福利大转盘</title><style>
+        #cnzz_stat_icon_1275396638 {
+            display: none;
+        }
+    </style><link rel=stylesheet href=css/index.css><link rel=stylesheet href=css/form.css><script src=js/jquery-3.0.0.min.js></script><script src=js/jquery.cookie.js></script><script src=js/index.js></script><link rel=stylesheet type=text/css href="css/MultiPicker.css?rev=@@hash"><script type=text/javascript>var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1275396638'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275396638' type='text/javascript'%3E%3C/script%3E"));</script><script>
+        //声明_czc对象:
+        var _czc = _czc || [];
+        _czc.push(["_trackEvent", "至慧学堂福利大转盘"])
+    </script></head><style>
+    html, body {font-family: PingFangSC-Regular;font-size: 24px;margin: 0;width: 100%;height: 100%;}
+</style><body onload=load()><div class=mainContainer><div class=topTag></div><div class=history>抽奖历史</div><div class=midTag></div><div class=outer><div class=inner></div><input type=button class=butt></div><div class=shadowBox style="display: none"></div></div><div class=popupModel style=display:none><div class=userInfo style="display: none"><div class=infoTitle>获奖信息填写</div><div class=infoState>至慧学堂工作人员将在<br>7个工作日内发货哟</div><div class=mainForm><table cellpadding=5 class=infoTable><tr><td style="text-align: left;color:#F88359;">姓名&nbsp;&nbsp;&nbsp;</td><td class=fill_content_text colspan=2 align=left><input type=text placeholder=请输入真实姓名 id=mather_name name=name autocomplete=off></td></tr><tr><td style="text-align: left;color:#F88359;">电话&nbsp;&nbsp;&nbsp;</td><td class=fill_content_text colspan=2 align=left><input type=text placeholder=请填写11位手机号 id=mobile name=phone autocomplete=off maxlength=11></td></tr><tr><td style="text-align: left;color:#F88359;">地址&nbsp;&nbsp;&nbsp;</td><td class=fill_content_text colspan=2 align=left><input type=text placeholder="选择省 / 市 / 区 / 街道" name=city id=address autocomplete=off readonly><div id=addressContainer></div></td></tr><tr><td style="text-align: left"></td><td class=fill_content_text colspan=2 align=left><input type=text placeholder=填写详细地址 id=detailAddress name=address autocomplete=off></td></tr></table><div class=buttContainer><input name=submit type=button class=fill_submit value=提交></div></div><div class=modelClose></div></div><div class=partStatus style="display: none"><div class=partInner><div class=partTitle></div><div class=partIMG></div><div class=partState></div><div class=btnContainer><input type=button class=negativeButton></div></div><div class=modelClose></div></div><div class=stopLottery style="display: none"><div class=stopState>抽奖已结束</div></div></div></body><script>
+    var openid;
+
+    function load() {
+        // $('.mainContainer').css('height', document.documentElement.clientHeight + 'px');
+
+        if (!($.cookie("openid_cookie") == null || $.cookie("openid_cookie") == undefined)) {
+            openid = $.cookie("openid_cookie")
+            controller.init();
+            return
+        }
+        var code = GetQueryString('code')
+        if (code == undefined || code == null) {
+            var appid = 'wxc34006e5a93af3dd'
+            var rurl = location.href
+            location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + rurl + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect'
+        } else {
+            $.ajax({
+                url: wxIp + 'wx/base/getUserInfo?code=' + code,//code 微信链接自带
+                type: 'get',
+                success: function (res) {
+                    if (res.status == 200) {
+                        // openid = "143894003jdds000--kl000";  //测试
+                        openid = res.data.openid;
+                        $.cookie("openid_cookie", openid, {"expires": 1});
+                        controller.init();
+                    } else {
+                        alert("加载失败,请刷新重试")
+                    }
+                }
+            })
+        }
+    }
+
+</script><script src=js/lotteryController.js></script><script src=js/backup.js></script><script src=js/multiPicker.js></script><script src=js/monitor.js></script></html>
